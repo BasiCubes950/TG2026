@@ -93,6 +93,7 @@ Then load `Toxicoa/Healthy_ML_3/chrome-extension` at `chrome://extensions` (**De
 - **The deployed model needs 5 comments** before it can predict, so it can't score a brand-new thread.
 - **Moderate accuracy:** it catches many toxic threads but also raises false alarms, so it's best for ranking threads for review rather than automatic blocking.
 - **Prototype only:** the extension uses plain HTTP and simple file storage, and a teen can disable it. It isn't ready for real-world deployment.
+- **Limited Domain:** our dataset covers a limited set of Reddit communities, which may reduce the model’s ability to generalize to other communities and platforms.
 
 ## Future work
 
