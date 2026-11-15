@@ -97,7 +97,8 @@ Then load `Toxicoa/Healthy_ML_3/chrome-extension` at `chrome://extensions` (**De
 - **Moderate accuracy:** it catches many toxic threads but also raises false alarms, so it's best for ranking threads for review rather than automatic blocking.
 - **Prototype only:** the extension uses plain HTTP and simple file storage, and a teen can disable it. It isn't ready for real-world deployment.
 - **Limited Domain:** our dataset covers a limited set of Reddit communities, which may reduce the model’s ability to generalize to other communities and platforms.
-Domain Generalization: Domain-adaptation theory bounds target-domain error by source-domain error, distribution differences, and the minimum combined error:
+
+Domain-adaptation theory bounds target-domain error by source-domain error, distribution differences, and the minimum combined error:
 
 $$
 \epsilon_T(h) \leq \epsilon_S(h) + \frac{1}{2}d_{\mathcal{H}\Delta\mathcal{H}}(P_S^X,P_T^X) + \lambda_{\mathcal{H}}
