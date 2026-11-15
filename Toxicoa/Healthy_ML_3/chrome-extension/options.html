@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Healthy Reddit · developer settings</title>
+<link rel="stylesheet" href="ui.css">
+<style> body { max-width: 520px; margin: 32px auto; padding: 0 16px; } .btn { width: auto; display: inline-block; } textarea { width: 100%; padding: 8px; font: 14px system-ui; } </style>
+</head>
+<body>
+  <h1><span class="logo" aria-hidden="true">◐</span> Developer settings</h1>
+  <p class="muted">Parents manage the PIN and blocks in the Parent Portal. This page is for the team while testing.</p>
+  <label for="api">Backend URL</label>
+  <input id="api" placeholder="http://localhost:8787">
+  <button id="save" class="btn">Save</button> <span id="msg" class="muted"></span>
+  <p class="muted src">If you change the host, also add it to "host_permissions" in manifest.json.</p>
+
+  <h2>Try the local scorer</h2>
+  <p class="muted src">This is the in-extension fallback used when the server is unreachable (and for blurring flagged posts in the feed).</p>
+  <textarea id="test" rows="3" placeholder="Paste a title or comment"></textarea>
+  <p>Score: <strong id="out">-</strong> · level: <strong id="lvl">-</strong></p>
+<script src="config.js"></script><script src="classifier.js"></script><script src="options.js"></script>
+</body>
+</html>

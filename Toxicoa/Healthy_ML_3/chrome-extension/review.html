@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parent review · Toxica</title>
+  <link rel="stylesheet" href="review.css">
+</head>
+<body>
+  <main id="main" class="app">
+    <header class="topbar">
+      <div class="brand toxica-brand"><img src="toxica-wordmark-white.png" alt="Toxica" class="toxica-wordmark"></div>
+      <div class="top-meta">Parent review · <strong id="verifiedStatus">Private</strong></div>
+    </header>
+
+    <!-- PIN verification always happens before flagged content enters the page. -->
+    <section id="gate" class="gate" aria-labelledby="gateTitle">
+      <p class="small-heading">PARENT ACCESS</p>
+      <h1 id="gateTitle">Enter your PIN</h1>
+      <p class="subtle">Review the discussion privately before deciding what your child can see.</p>
+      <label for="pin">Parent PIN</label>
+      <input id="pin" type="password" inputmode="numeric" maxlength="8" autocomplete="off" placeholder="Enter PIN">
+      <button id="verify" class="button primary" disabled>Continue to review</button>
+      <p id="msg" class="error" role="alert"></p>
+    </section>
+
+    <section id="details" class="review-panel" hidden aria-label="Private parent review">
+      <div class="review-grid">
+        <article class="discussion" aria-label="Flagged discussion">
+          <div class="thread-label">
+            <span id="badge" class="badge"></span>
+          </div>
+          <h1 id="title" class="thread-title"></h1>
+          <p id="summary" class="flag-context"></p>
+          <details id="threadDetails" class="expandable">
+            <summary>Read full post and comments <span aria-hidden="true">⌄</span></summary>
+            <div class="expanded-content">
+              <p id="bodyText" class="review-body"></p>
+              <div id="commentSection" hidden>
+                <h3>Sampled comments</h3>
+                <ul id="comments" class="sample-comments"></ul>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <section class="guidance" aria-label="Parent conversation guidance">
+          <h2>Talk about it</h2>
+          <div class="prompt-block context-block">
+            <h3>Context</h3>
+            <p id="tipContext" class="context-copy"></p>
+          </div>
+          <div class="prompt-block">
+            <h3>Ask</h3>
+            <p id="tipAsk"></p>
+          </div>
+          <div class="prompt-block">
+            <h3>Reflect</h3>
+            <p id="tipReflect"></p>
+          </div>
+          <p id="src" class="fineprint"></p>
+        </section>
+      </div>
+
+      <section class="decision" aria-label="Parent decision">
+        <div class="decision-heading">Your decision</div>
+        <p class="decision-description">Allow this post once, or block <span id="lvl">this toxicity level</span> for 30 days.</p>
+        <div class="decision-buttons">
+          <button id="view" class="button secondary">Allow this thread</button>
+          <button id="block" class="button primary">Block this level for 30 days</button>
+        </div>
+        <p id="decisionMsg" class="error" role="alert"></p>
+      </section>
+    </section>
+  </main>
+  <script src="review.js"></script>
+</body>
+</html>

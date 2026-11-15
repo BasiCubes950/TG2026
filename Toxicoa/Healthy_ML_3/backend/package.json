@@ -1,0 +1,9 @@
+{
+  "name": "healthy-reddit-backend",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Pairing, toxicity scoring, policy/PIN enforcement and Gemini coaching for the Healthy Reddit extension",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

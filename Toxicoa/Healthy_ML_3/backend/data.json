@@ -1,0 +1,55 @@
+{
+  "parents": {
+    "a8b3f419-27dc-4519-af06-d0196630ec82": {
+      "id": "a8b3f419-27dc-4519-af06-d0196630ec82",
+      "email": "hannahtang@berkeley.edu",
+      "passSalt": "0af086d1159406e753abd7d2fbca7095",
+      "passHash": "55d696cc9d71b95e1c5c5cab199c865405973c354889b19f38996cf87a930fc7489763620fbc8e5721e6c0ceab4c33b9f4357a39dcad4b3cb957aa8052e51955",
+      "pinEnc": "c5DvgBvDLvLdh4j5.yRtgK1ECWO8sPO21amAYtg==.hrGjLA==",
+      "blocks": {},
+      "created": 1794710725297
+    }
+  },
+  "sessions": {
+    "GwTcz5qiyYoeYLtSMpcajSj2Fq7jU13lxynyD4N2wMY": {
+      "parentId": "a8b3f419-27dc-4519-af06-d0196630ec82",
+      "expires": 1797303990738
+    }
+  },
+  "pairings": {
+    "202590": {
+      "parentId": "a8b3f419-27dc-4519-af06-d0196630ec82",
+      "expires": 1794712593346,
+      "redeemed": {
+        "deviceId": "3281e7f5-b5d6-43dd-8b93-ab87d9145da2",
+        "username": "SuitableOrange5262",
+        "at": 1794711998022
+      }
+    },
+    "972132": {
+      "parentId": "a8b3f419-27dc-4519-af06-d0196630ec82",
+      "expires": 1794711326549,
+      "redeemed": {
+        "deviceId": "1f56fe8d-03ab-4cb3-909c-accf445f2a85",
+        "username": "SuitableOrange5262",
+        "at": 1794710733961
+      }
+    }
+  },
+  "devices": {
+    "O6n8_QvfIMquosXw4qubvF78RcUZmsbAI7acE0tA_dE": {
+      "id": "3281e7f5-b5d6-43dd-8b93-ab87d9145da2",
+      "parentId": "a8b3f419-27dc-4519-af06-d0196630ec82",
+      "installId": "86e51dd6-593c-453d-82c4-761d7d569ce2",
+      "usernames": [
+        "SuitableOrange5262"
+      ],
+      "currentUsername": "SuitableOrange5262",
+      "pairedAt": 1794711998022,
+      "lastSeen": 1794728348546,
+      "pinFails": 0,
+      "lockUntil": 0
+    }
+  },
+  "secret": "4318ad550b222cf1214cd714a4ed4568aea23550759a329b25f270b42616df8e"
+}

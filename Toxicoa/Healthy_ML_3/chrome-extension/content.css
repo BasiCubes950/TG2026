@@ -1,0 +1,7 @@
+/* Feed only. The full-screen pause overlay lives in a shadow root (see content.js). */
+.hr-hidden { display: none !important; }
+.hr-blurred { filter: blur(12px) !important; max-height: 140px !important; overflow: hidden !important; user-select: none !important; }
+.hr-note { box-sizing: border-box; margin: 8px 0 4px; padding: 6px 12px; border-radius: 8px; font: 600 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #f3f6fa; color: #1b2433; border-left: 4px solid #b45309; }
+.hr-note.hr-medium { border-left-color: #c2410c; }
+.hr-note.hr-high { border-left-color: #b91c1c; }

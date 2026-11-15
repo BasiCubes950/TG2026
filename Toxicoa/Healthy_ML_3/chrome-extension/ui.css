@@ -1,0 +1,22 @@
+/* Forest green — shared Chrome popup and pairing UI */
+:root { color-scheme:light; --page:#f3f8f0; --surface:#fffefa; --ink:#242924; --muted:#5b665b; --border:#d8e2d5; --green:#1E5B3C; --green-hover:#174830; }
+*{box-sizing:border-box} [hidden]{display:none!important}
+body{margin:0;background:var(--page);color:var(--ink);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body.popup{width:390px;min-height:245px;padding:24px 25px 20px;background:var(--surface)}
+h1{display:flex;align-items:center;gap:11px;font-size:23px;letter-spacing:-.035em;font-weight:680;margin:0 0 23px;line-height:1.2}
+.logo{color:var(--green);font-size:24px}.muted{color:var(--muted)}
+p{margin:0 0 14px}.lead{margin-bottom:17px}.ok{font-size:18px;font-weight:680;color:var(--green);margin:0 0 10px}
+.account{border:1px solid var(--border);border-radius:14px;padding:15px 16px;background:#f0f6ee;margin:17px 0;overflow-wrap:anywhere}
+.account strong{display:block;font-size:16px;font-weight:680;margin-top:2px}.account.warn{background:#fff8ed;border-color:#f0dfc5;color:#825d34}
+label{display:block;font-weight:620;font-size:13px;margin:12px 0 7px}
+input,textarea{width:100%;border:1px solid #bbcdb8;border-radius:11px;background:#fff;color:var(--ink);padding:12px 13px;font:16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+input:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(30,91,60,.14)}
+.codebox{letter-spacing:.17em;text-align:center;font-weight:700;font-size:21px}
+.btn{display:inline-block;margin-top:12px;background:var(--green);color:#fff;border:1px solid var(--green);border-radius:12px;padding:11px 17px;min-height:45px;font-weight:660;font-size:14px;cursor:pointer}
+body.popup .btn{width:100%}.btn:hover:not(:disabled){background:var(--green-hover)}.btn:disabled{opacity:.5;cursor:default}
+.error{font-size:12px;color:#a33b35;min-height:1em}.foot{margin:18px 0 0;padding-top:13px;border-top:1px solid var(--border);font-size:11px;overflow-wrap:anywhere}
+:focus-visible{outline:3px solid rgba(30,91,60,.32);outline-offset:2px}
+
+/* Logo-only customization: Rubik lettering in source artwork; all other font rules untouched. */
+.toxica-heading { margin: 0 0 23px; line-height: 1; }
+.toxica-wordmark { display:block; width: 210px; max-width:100%; height:auto; object-fit:contain; }
