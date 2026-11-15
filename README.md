@@ -24,7 +24,8 @@ TG2026-main/
 │   ├── classifier.ipynb                     Track 1: text-only models (SVM, logistic regression, …)
 │   ├── classifier_svm_10000_results.ipynb   Track 1: TF-IDF SVM results
 │   ├── embeddings_svm_10000_results.ipynb   Track 1: sentence embeddings vs. TF-IDF
-│   └── improve_target_and_features.ipynb    Track 2: final model (exports the .pkl)
+│   ├── improve_target_and_features.ipynb    Track 2: final model (exports the .pkl)
+│   └── XLM-RoBERTa_baseline.py             Fine-tuned XLM-RoBERTa baseline
 │
 └── Toxicoa/                     The product: Chrome extension + backend
     ├── README.md                Setup, architecture, API, limitations
@@ -33,6 +34,8 @@ TG2026-main/
         └── backend/             Node server (accounts, pairing, PIN, blocks, Gemini tips)
             └── ml_service/      Python service that runs the trained model
 ```
+
+**Transformer baseline:** [`ML/XLM-RoBERTa_baseline.py`](https://github.com/YulSung950/TG2026/blob/main/ML/XLM-RoBERTa_baseline.py) contains the XLM-RoBERTa baseline training script.
 
 ## How the pieces fit
 
