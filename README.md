@@ -1,4 +1,4 @@
-# TG2026: Toxicoa
+# Datathon2026: Toxicoa
 
 **Predicting which Reddit threads will turn toxic before they do, and helping parents and teens talk about it.**
 
