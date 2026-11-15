@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toxica · Parent Portal</title>
+<link rel="stylesheet" href="portal.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><img class="toxica-wordmark" src="toxica-wordmark-white.png" alt="Toxica"><span class="portal-name">Parent Portal</span></div>
+  <button id="logout" class="link" hidden>Sign out</button>
+</header>
+
+<main>
+  <!-- Signed out -->
+  <section id="auth" class="card narrow" hidden>
+    <p class="auth-eyebrow">FAMILY PROTECTION</p>
+    <h1 class="auth-title">Your family, connected.</h1>
+    <p class="auth-subtitle">Manage the tools that help keep conversations open.</p>
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tabSignup" aria-selected="true">Create account</button>
+      <button role="tab" id="tabLogin" aria-selected="false">Sign in</button>
+    </div>
+    <form id="authForm" novalidate>
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email" required>
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="current-password" minlength="8" required>
+      <div id="pinField">
+        <label for="newPin">Secret PIN <span class="muted">(4 to 8 digits)</span></label>
+        <input id="newPin" type="password" inputmode="numeric" pattern="\d{4,8}" maxlength="8">
+        <p class="hint">You'll type this PIN on your teen's screen to approve or block a flagged thread. Don't share it.</p>
+      </div>
+      <p id="authMsg" class="error" role="alert"></p>
+      <button id="authSubmit" class="btn" type="submit">Create account</button>
+    </form>
+  </section>
+
+  <!-- Signed in -->
+  <div id="dash" hidden>
+    <div class="dashboard-intro"><div><p class="intro-eyebrow">PARENT MANAGEMENT</p><h1>Family settings</h1><p class="welcome">Signed in as <strong id="who"></strong></p></div><div class="intro-pill">●  Your control center</div></div>
+    <div class="grid">
+      <section class="card">
+        <h2>Your PIN</h2>
+        <div class="pinrow">
+          <code id="pinView" aria-live="polite">••••</code>
+          <button id="togglePin" class="btn secondary" aria-pressed="false">Show PIN</button>
+        </div>
+        <details>
+          <summary>Change PIN</summary>
+          <label for="chPin">New PIN</label><input id="chPin" type="password" inputmode="numeric" maxlength="8">
+          <label for="chPass">Account password</label><input id="chPass" type="password" autocomplete="current-password">
+          <button id="savePin" class="btn">Save new PIN</button>
+          <p id="pinMsg" class="msg" role="status"></p>
+        </details>
+      </section>
+
+      <section class="card">
+        <h2>Pair your teen's browser</h2>
+        <p class="muted">On your teen's computer, sign in to Reddit in Chrome, click the Toxica extension icon, and enter this code.</p>
+        <div id="pairIdle"><button id="genCode" class="btn">Generate pairing code</button></div>
+        <div id="pairActive" hidden>
+          <div class="code" id="code" aria-label="Pairing code"></div>
+          <p class="status" id="pairStatus"><span class="spinner" aria-hidden="true"></span> Waiting for your teen's browser to connect… <span id="pairTimer" class="muted"></span></p>
+        </div>
+        <p id="pairDone" class="ok" role="status" hidden></p>
+      </section>
+
+      <section class="card wide">
+        <h2>Active 30-day blocks</h2>
+        <p class="muted">When you block a level from the review window, every thread at that level is skipped for 30 days and your teen goes straight back to the Reddit home feed.</p>
+        <ul class="tiers" id="tiers"></ul>
+        <button id="resetAll" class="btn secondary">Reset all blocks</button>
+        <p id="blockMsg" class="msg" role="status"></p>
+      </section>
+
+      <section class="card wide">
+        <h2>Paired browsers</h2>
+        <p class="muted">Protection is tied to the browser itself, so it stays on even if your teen signs out or switches Reddit accounts. Any account seen on that browser is listed here.</p>
+        <ul class="children" id="children"><li class="muted">No browser paired yet.</li></ul>
+      </section>
+    </div>
+  </div>
+</main>
+<script src="portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,437 @@
+/* Forest #1E5B3C theme — parent review and PIN. Visual only. */
+:root {
+  color-scheme: light;
+  --page: #1E5B3C;
+  --surface: #fffefa;
+  --ink: #242924;
+  --muted: #5b665b;
+  --border: #d8e2d5;
+  --green: #1E5B3C;
+  --green-hover: #174830;
+  --rose: #aa3434;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color: var(--ink); background: var(--page);
+  -webkit-font-smoothing: antialiased;
+}
+.app {
+  width: min(85vw, 1500px);
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 0 38px;
+}
+/* Brand stays at the top; the content below gets the available height. */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 0 5px 22px; }
+.brand { font-size: 27px; font-weight: 690; letter-spacing: .005em; color: #fff; }
+.top-meta { font-size: 16px; color: #e3f0e2; }
+.top-meta strong { font-weight: 650; color: #fff; }
+
+.review-panel {
+  flex: none;
+  min-height: min(640px, 68vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(24px, 3vh, 38px);
+  padding: clamp(40px, 4vw, 66px);
+  margin: auto 0;
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 36px;
+}
+.review-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(46px, 5.2vw, 92px); align-items: start; }
+.discussion, .guidance { min-width: 0; }
+.thread-label { margin-bottom: 28px; }
+.badge { display: inline-flex; padding: 8px 15px; border-radius: 100px; font-size: 13px; font-weight: 650; }
+.badge.high { color: #a12b27; background: #fae4df; }
+.badge.medium { color: #96612a; background: #fff1da; }
+.badge.low { color: #626c39; background: #edf0db; }
+.thread-title { margin: 0 0 21px; font-size: clamp(30px, 2.55vw, 44px); font-weight: 670; letter-spacing: -.035em; line-height: 1.22; overflow-wrap: anywhere; }
+.flag-context { margin: 0; max-width: 62ch; font-size: clamp(17px, 1.36vw, 22px); line-height: 1.64; color: var(--muted); }
+.expandable { margin-top: 28px; }
+.expandable summary { display: flex; justify-content: space-between; gap: 14px; align-items: center; list-style: none; width: fit-content; cursor: pointer; color: var(--green); font-size: 15px; font-weight: 650; }
+.expandable summary::-webkit-details-marker { display: none; }
+.expandable summary span { display: inline-block; transition: transform .15s; }
+.expandable[open] summary span { transform: rotate(180deg); }
+.expanded-content { margin-top: 23px; padding-top: 20px; border-top: 1px solid var(--border); }
+.review-body { font-size: 15px; color: #4a524c; line-height: 1.68; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 260px; overflow: auto; }
+.sample-comments { padding-left: 20px; max-height: 210px; overflow: auto; font-size: 14px; line-height: 1.6; color: #4a524c; overflow-wrap: anywhere; }
+.sample-comments li { margin-bottom: 12px; }
+.expanded-content h3 { font-size: 13px; color: var(--muted); }
+
+.guidance h2 { margin: 0 0 28px; font-size: 27px; letter-spacing: .01em; color: #586857; font-weight: 660; }
+.prompt-block { margin-bottom: 30px; }
+.prompt-block h3 { font-size: 17px; font-weight: 550; margin: 0 0 9px; color: var(--muted); }
+.prompt-block p { margin: 0; font-size: clamp(20px, 1.65vw, 28px); line-height: 1.42; font-weight: 440; overflow-wrap: anywhere; }
+.prompt-block.context-block p { font-size: clamp(17px, 1.35vw, 22px); line-height: 1.55; }
+.fineprint { font-size: 11px; line-height: 1.5; color: #7d887d; margin-top: 25px; }
+
+.decision { display: flex; align-items: center; flex-wrap: wrap; column-gap: 22px; row-gap: 15px; padding-top: 8px; }
+.decision-heading { font-size: 18px; font-weight: 650; color: var(--muted); white-space: nowrap; }
+.decision-description { flex: 1; margin: 0; color: var(--muted); font-size: 13px; text-align: right; min-width: 220px; }
+.decision-buttons { flex: 0 1 760px; display: grid; grid-template-columns: 1fr 1fr; gap: 13px; min-width: 390px; }
+.button { min-height: 64px; border: 1px solid var(--border); border-radius: 15px; font: 650 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; cursor: pointer; padding: 12px 16px; }
+.button.primary { background: var(--green); color: white; border-color: var(--green); }
+.button.primary:hover:not(:disabled) { background: var(--green-hover); }
+.button.secondary { background: white; color: var(--ink); }
+.button.secondary:hover:not(:disabled) { background: #eff5ec; }
+.button:disabled { opacity: .54; cursor: default; }
+.button:focus-visible, summary:focus-visible { outline: 3px solid rgba(30,91,60,.28); outline-offset: 3px; }
+.decision .error { flex-basis: 100%; text-align: right; }
+.error { color: #b83838; font-size: 13px; min-height: 1.2em; margin: 0; }
+
+/* Parent PIN: separate and private; no post text shown before verification. */
+.gate { width: min(100%, 600px); margin: auto; background: #fffefa; border: 1px solid var(--border); border-radius: 28px; padding: clamp(30px, 4vw, 50px); }
+.small-heading { margin: 0 0 10px; color: #4b674a; font-size: 12px; letter-spacing: .12em; font-weight: 700; }
+.gate h1 { font-size: clamp(32px, 3vw, 42px); line-height: 1.14; margin: 0 0 12px; letter-spacing: -.025em; }
+.subtle { color: var(--muted); line-height: 1.6; margin: 0 0 30px; }
+.gate label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.gate input { width: 100%; background: white; color: var(--ink); border: 1px solid #bfc8c2; border-radius: 12px; padding: 14px 16px; font-size: 17px; outline: none; }
+.gate input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(30,91,60,.12); }
+.gate .button { width: 100%; margin: 16px 0 12px; }
+.done { margin: auto; font-size: 22px; color: #fff; text-align: center; }
+
+@media (max-width: 1020px) {
+  .review-panel { min-height: 0; gap: 35px; }
+  .review-grid { gap: 32px; }
+  .decision-description { text-align: left; }
+  .decision-buttons { flex: 1 1 100%; }
+}
+@media (max-width: 700px) {
+  .app { width: calc(100% - 28px); padding: 20px 0 28px; }
+  .topbar { padding-bottom: 18px; }
+  .brand { font-size: 16px; }
+  .top-meta { font-size: 12px; }
+  .review-panel { border-radius: 24px; padding: 26px 22px; gap: 36px; }
+  .review-grid { grid-template-columns: 1fr; gap: 34px; }
+  .thread-title { font-size: 29px; }
+  .guidance h2 { font-size: 22px; }
+  .prompt-block h3 { font-size: 15px; }
+  .decision-heading { font-size: 15px; }
+  .button { min-height: 54px; font-size: 15px; }
+  .prompt-block p { font-size: 19px; }
+  .decision-description { flex-basis: 100%; min-width: 0; }
+  .decision-buttons { min-width: 0; grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .expandable summary span { transition: none; } }
+
+/* Toxica wordmark only. Content typography and layout are unchanged. */
+.topbar { padding-top: 0; }
+.toxica-brand { display: flex; align-items: center; justify-content: center; border-radius: 14px; background: #fffefa; padding: 9px 18px; width: fit-content; min-height: 65px; }
+.toxica-wordmark { display: block; width: clamp(165px, 13vw, 238px); height: auto; max-height: 49px; object-fit: contain; }
+@media(max-width:700px) { .toxica-brand { padding: 8px 11px; min-height: 47px; border-radius: 11px; }.toxica-wordmark { width: clamp(124px, 38vw, 172px); max-height: 34px; } }
+
+
+/* Branding/layout refinement: white transparent logo, no tile; header close to review. */
+.app {
+  justify-content: center;
+  gap: clamp(14px, 2vh, 22px);
+}
+.topbar {
+  padding: 0 5px;
+  margin: 0;
+  flex-shrink: 0;
+}
+.toxica-brand {
+  background: transparent;
+  padding: 0;
+  min-height: 0;
+  border-radius: 0;
+  justify-content: flex-start;
+}
+.toxica-wordmark {
+  width: clamp(175px, 15vw, 260px);
+  max-height: 56px;
+}
+.review-panel {
+  margin: 0;
+}
+.gate {
+  margin: 0 auto;
+}
+@media (max-width:700px) {
+  .app { justify-content: flex-start; gap: 18px; }
+  .toxica-brand { padding: 0; min-height: 0; border-radius: 0; }
+  .toxica-wordmark { width: clamp(134px, 34vw, 180px); max-height: 42px; }
+}
+
+
+/* -------------------------------------------------------
+   Approved large review design — 16:9 reference adaptation
+   CSS only. Keeps all existing review IDs and event handling.
+---------------------------------------------------------- */
+:root {
+  --page: #1E5B3C;
+  --surface: #FFFEFA;
+  --green: #1E5B3C;
+  --green-hover: #174A30;
+  --ink: #19201C;
+  --muted: #476354;
+  --border: #DBE3DC;
+}
+
+/* One centered header + main card group, not a floating header. */
+.app {
+  width: min(91vw, 1560px);
+  min-height: 100svh;
+  padding: clamp(26px, 4.7vh, 52px) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(22px, 3vh, 32px);
+}
+.topbar {
+  width: 100%;
+  padding: 0 clamp(8px, 2.6vw, 52px);
+  margin: 0;
+  flex: none;
+  align-items: center;
+}
+.toxica-brand {
+  padding: 0;
+  border-radius: 0;
+  min-height: 0;
+  background: transparent;
+}
+.toxica-wordmark {
+  width: clamp(220px, 18vw, 310px);
+  height: auto;
+  max-height: 78px;
+  object-fit: contain;
+}
+.top-meta { font-size: clamp(14px, 1.25vw, 22px); color: #F4F7F2; }
+.top-meta strong { color: #fff; }
+
+/* Wide, naturally centered panel. No excessive empty whitespace. */
+.review-panel {
+  width: 100%;
+  margin: 0;
+  min-height: min(74svh, 720px);
+  padding: clamp(34px, 3.1vw, 54px);
+  border-radius: clamp(24px, 2.5vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(22px, 3.3vh, 38px);
+  background: var(--surface);
+  border: 0;
+}
+.review-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(50px, 5.2vw, 95px);
+  align-items: start;
+}
+.discussion {
+  min-width: 0;
+  padding-right: clamp(0px, 1.7vw, 28px);
+  border-right: 1px solid #e1e6df;
+}
+.guidance { min-width: 0; }
+.thread-label { margin: 0 0 clamp(26px, 3.2vh, 37px); }
+.badge { padding: 10px 22px; font-size: clamp(14px, 1.15vw, 18px); }
+.thread-title {
+  font-size: clamp(33px, 2.62vw, 45px);
+  line-height: 1.14;
+  font-weight: 750;
+  letter-spacing: -.035em;
+  margin: 0 0 20px;
+}
+.flag-context {
+  color: var(--muted);
+  font-size: clamp(17px, 1.42vw, 23px);
+  line-height: 1.47;
+}
+.expandable { margin-top: 25px; }
+.expandable summary {
+  color: var(--green);
+  font-size: clamp(15px, 1.14vw, 19px);
+  font-weight: 750;
+}
+.guidance h2 {
+  margin: 0 0 19px;
+  font-size: clamp(24px, 2.05vw, 34px);
+  color: var(--green);
+  letter-spacing: -.02em;
+  font-weight: 730;
+}
+.guidance h2::after {
+  content: "";
+  display: block;
+  width: 115px;
+  height: 5px;
+  margin-top: 6px;
+  border-radius: 10px;
+  background: #c9e4b6;
+}
+.prompt-block { margin: 0 0 clamp(18px, 2.3vh, 28px); }
+.prompt-block h3 {
+  color: var(--green);
+  font-weight: 750;
+  font-size: clamp(16px, 1.3vw, 22px);
+  margin: 0 0 4px;
+}
+.prompt-block p {
+  color: var(--ink);
+  font-size: clamp(19px, 1.58vw, 26px);
+  line-height: 1.38;
+}
+.prompt-block.context-block p {
+  color: var(--ink);
+  font-size: clamp(17px, 1.4vw, 23px);
+  line-height: 1.42;
+}
+.fineprint {
+  font-size: clamp(11px, .95vw, 15px);
+  line-height: 1.5;
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+/* Full-width decision row with precise CTA grouping. */
+.decision {
+  border-top: 1px solid var(--border);
+  padding-top: clamp(22px, 3vh, 34px);
+  display: grid;
+  grid-template-columns: auto minmax(210px, 1fr) minmax(450px, 1.8fr);
+  align-items: center;
+  column-gap: clamp(18px, 2vw, 34px);
+  row-gap: 12px;
+}
+.decision-heading {
+  font-size: clamp(18px, 1.5vw, 25px);
+  font-weight: 700;
+  color: var(--muted);
+}
+.decision-description {
+  min-width: 0;
+  text-align: left;
+  font-size: clamp(12px, 1vw, 16px);
+  line-height: 1.42;
+}
+.decision-buttons {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: .9fr 1.25fr;
+  gap: 12px;
+  width: 100%;
+}
+.button {
+  min-height: clamp(57px, 5vw, 73px);
+  border-radius: 16px;
+  font-size: clamp(15px, 1.35vw, 21px);
+  white-space: normal;
+}
+.decision .error { grid-column: 1 / -1; margin: 0; }
+
+@media (max-width: 1050px) {
+  .review-grid { gap: 34px; }
+  .decision { grid-template-columns: auto 1fr; }
+  .decision-buttons { grid-column: 1 / -1; }
+}
+@media (max-width: 740px) {
+  .app { width: calc(100% - 30px); padding: 18px 0 30px; justify-content: flex-start; gap: 20px; }
+  .topbar { padding: 0 6px; }
+  .toxica-wordmark { width: clamp(145px, 35vw, 210px); }
+  .top-meta { font-size: 12px; }
+  .review-panel { min-height: 0; padding: 28px 22px; }
+  .review-grid { grid-template-columns: 1fr; gap: 30px; }
+  .discussion { border-right: none; border-bottom: 1px solid var(--border); padding: 0 0 28px; }
+  .thread-title { font-size: 30px; }
+  .flag-context { font-size: 16px; }
+  .guidance h2 { font-size: 25px; }
+  .prompt-block p { font-size: 19px; }
+  .decision { display: block; }
+  .decision-heading { margin-bottom: 6px; }
+  .decision-description { margin-bottom: 18px; }
+  .decision-buttons { grid-template-columns: 1fr; }
+}
+
+/* Keep PIN entry independent and secure. */
+.gate { margin: 0 auto; }
+
+
+/* PIN screen refinement: same white transparent logo as the approved review.
+   The header remains at the top; the larger PIN card is centered below. */
+.toxica-brand {
+  background: transparent !important;
+  border: 0;
+  box-shadow: none;
+  padding: 0 !important;
+  min-height: 0;
+}
+.toxica-wordmark {
+  width: clamp(220px, 19vw, 310px);
+  max-height: none;
+  object-fit: contain;
+}
+.app:has(#gate:not([hidden])) {
+  justify-content: flex-start;
+  gap: 0;
+}
+.app:has(#gate:not([hidden])) .topbar {
+  flex: none;
+  padding-bottom: 12px;
+}
+.gate {
+  width: min(100%, 820px);
+  max-width: 820px;
+  min-height: 470px;
+  padding: clamp(38px, 4.5vw, 66px);
+  margin: auto;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+.gate .small-heading {
+  font-size: 14px;
+  letter-spacing: .12em;
+  margin-bottom: 15px;
+}
+.gate h1 {
+  font-size: clamp(42px, 3.6vw, 58px);
+  line-height: 1.08;
+  margin: 0 0 17px;
+}
+.gate .subtle {
+  font-size: clamp(17px, 1.4vw, 21px);
+  line-height: 1.55;
+  margin-bottom: 32px;
+}
+.gate label {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.gate input {
+  min-height: 64px;
+  border-radius: 13px;
+  font-size: 21px;
+  padding: 16px 19px;
+}
+.gate .button {
+  min-height: 65px;
+  font-size: 19px;
+  margin: 20px 0 12px;
+}
+@media (max-width: 740px) {
+  .app:has(#gate:not([hidden])) { min-height: 100svh; }
+  .gate {
+    width: 100%;
+    min-height: 0;
+    padding: 35px 26px;
+    border-radius: 25px;
+  }
+  .gate h1 { font-size: 39px; }
+  .gate .subtle { font-size: 16px; }
+  .gate input { font-size: 18px; min-height: 56px; }
+  .gate .button { font-size: 16px; min-height: 57px; }
+  .toxica-wordmark { width: clamp(155px, 33vw, 210px); }
+}

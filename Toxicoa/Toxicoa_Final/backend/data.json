@@ -1,0 +1,77 @@
+{
+  "parents": {
+    "a8b3f419-27dc-4519-af06-d0196630ec82": {
+      "id": "a8b3f419-27dc-4519-af06-d0196630ec82",
+      "email": "hannahtang@berkeley.edu",
+      "passSalt": "0af086d1159406e753abd7d2fbca7095",
+      "passHash": "55d696cc9d71b95e1c5c5cab199c865405973c354889b19f38996cf87a930fc7489763620fbc8e5721e6c0ceab4c33b9f4357a39dcad4b3cb957aa8052e51955",
+      "pinEnc": "c5DvgBvDLvLdh4j5.yRtgK1ECWO8sPO21amAYtg==.hrGjLA==",
+      "blocks": {},
+      "created": 1794710725297
+    },
+    "95a36832-eca4-47e8-b609-b13bd704d529": {
+      "id": "95a36832-eca4-47e8-b609-b13bd704d529",
+      "email": "hannahlmtang@gmail.com",
+      "passSalt": "c8cc9fd6d685fe5be6aeecf730b45e00",
+      "passHash": "ab063c1c5ea0d2cf8030a59d61e2e5713e50bed3f9ba57df6901d9eb8e469e2141d2cd8e8a2e7257b765001ace48dd5c061985c89fdcbe24e1b858d7717433dd",
+      "pinEnc": "kE3CLepW0H4YoPcY.qPonwbQmHab460x4yUuyqQ==.slS85Q==",
+      "blocks": {},
+      "created": 1794730490793
+    }
+  },
+  "sessions": {
+    "GwTcz5qiyYoeYLtSMpcajSj2Fq7jU13lxynyD4N2wMY": {
+      "parentId": "a8b3f419-27dc-4519-af06-d0196630ec82",
+      "expires": 1797303990738
+    },
+    "tkKeOMlu-99y6aVw9Axj3m7gEyULPwru75LDcWGNLvQ": {
+      "parentId": "95a36832-eca4-47e8-b609-b13bd704d529",
+      "expires": 1797322490793
+    }
+  },
+  "pairings": {
+    "202590": {
+      "parentId": "a8b3f419-27dc-4519-af06-d0196630ec82",
+      "expires": 1794712593346,
+      "redeemed": {
+        "deviceId": "3281e7f5-b5d6-43dd-8b93-ab87d9145da2",
+        "username": "SuitableOrange5262",
+        "at": 1794711998022
+      }
+    },
+    "451698": {
+      "parentId": "a8b3f419-27dc-4519-af06-d0196630ec82",
+      "expires": 1794771909667,
+      "redeemed": {
+        "deviceId": "ddb68ddf-4dfe-476f-baa7-7777007db54e",
+        "username": "SuitableOrange5262",
+        "at": 1794771380016
+      }
+    },
+    "972132": {
+      "parentId": "a8b3f419-27dc-4519-af06-d0196630ec82",
+      "expires": 1794711326549,
+      "redeemed": {
+        "deviceId": "1f56fe8d-03ab-4cb3-909c-accf445f2a85",
+        "username": "SuitableOrange5262",
+        "at": 1794710733961
+      }
+    }
+  },
+  "devices": {
+    "mnKKRVU7XmvbGF5xt1gOf-2gSi2US011P6d6ADI1rEQ": {
+      "id": "ddb68ddf-4dfe-476f-baa7-7777007db54e",
+      "parentId": "a8b3f419-27dc-4519-af06-d0196630ec82",
+      "installId": "ed4927c0-e8dc-4434-8150-a2ec0f6ab514",
+      "usernames": [
+        "SuitableOrange5262"
+      ],
+      "currentUsername": "SuitableOrange5262",
+      "pairedAt": 1794771380016,
+      "lastSeen": 1794772086507,
+      "pinFails": 0,
+      "lockUntil": 0
+    }
+  },
+  "secret": "4318ad550b222cf1214cd714a4ed4568aea23550759a329b25f270b42616df8e"
+}

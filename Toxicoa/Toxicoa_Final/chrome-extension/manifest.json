@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Healthy Reddit",
+  "version": "0.2.2",
+  "description": "Pauses toxic Reddit threads so a parent can review them together with their teen.",
+  "permissions": [
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://www.reddit.com/*",
+    "https://old.reddit.com/*",
+    "http://localhost:8787/*",
+    "http://*/*"
+  ],
+  "action": {
+    "default_title": "Healthy Reddit",
+    "default_popup": "setup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.reddit.com/*",
+        "https://old.reddit.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}

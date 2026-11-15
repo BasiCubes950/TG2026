@@ -1,0 +1,79 @@
+/* Toxica Parent Portal — Sage Edition
+   Redesigned from the uploaded working parent-portal files.
+   Styling and branding only; functional JS is unchanged. */
+:root {
+  --forest:#1E5B3C; --forest-dark:#174A31; --forest-pale:#E6EFE7;
+  --sage:#EDF3EB; --sage-deep:#DDE9DD; --surface:#FFFDF9;
+  --text:#253129; --muted:#65736B; --line:#D7E1D7;
+  --low:#E7EFD7; --low-i:#52682D; --med:#F7E9CF; --med-i:#80551E;
+  --high:#F9E4E0; --high-i:#A33A36;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{min-height:100%;background:var(--sage)}
+body{margin:0;min-height:100vh;font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--sage);color:var(--text);-webkit-font-smoothing:antialiased}
+.top{background:var(--forest);border-bottom:1px solid rgba(255,255,255,.13);padding:22px max(28px,calc((100vw - 1250px)/2));min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:22px;min-width:0}
+.toxica-wordmark{display:block;width:clamp(152px,14.5vw,225px);height:auto;object-fit:contain;flex-shrink:0}
+.portal-name{color:#E1EFE4;font-size:15px;font-weight:550;padding-left:22px;border-left:1px solid rgba(255,255,255,.28);white-space:nowrap}
+.top .link{color:#fff;background:transparent;border:1px solid rgba(255,255,255,.4);border-radius:11px;padding:9px 15px;font:600 14px inherit;cursor:pointer}
+.top .link:hover{background:rgba(255,255,255,.1)}
+main{width:min(94vw,1220px);margin:clamp(36px,5.5vh,65px) auto 80px}
+.muted{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,2.7vw,36px);box-shadow:0 12px 35px rgba(30,72,47,.055)}
+.card h2{margin:0 0 15px;color:var(--text);font-size:21px;line-height:1.3;font-weight:750;letter-spacing:-.025em}
+.narrow{width:min(100%,560px);margin:clamp(14px,4vh,42px) auto 0;padding:clamp(27px,3.4vw,43px)}
+.auth-eyebrow,.intro-eyebrow{margin:0 0 8px;letter-spacing:.14em;color:var(--forest);font-size:11px;font-weight:800}
+.auth-title{margin:0 0 4px;font-size:clamp(27px,2.7vw,35px);letter-spacing:-.04em;line-height:1.18}
+.auth-subtitle{margin:0 0 25px;font-size:14px;color:var(--muted)}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.tabs button{flex:1;padding:12px 8px;background:transparent;border:0;border-bottom:3px solid transparent;color:var(--muted);font:650 15px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--forest);border-bottom-color:var(--forest)}
+label{display:block;font-size:14px;font-weight:650;margin:16px 0 6px}
+input{display:block;width:100%;min-height:51px;border-radius:11px;background:#fff;border:1px solid #B9CABA;color:var(--text);padding:11px 14px;font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+input:focus{outline:0;border-color:var(--forest);box-shadow:0 0 0 3px rgba(30,91,60,.14)}
+.btn{border:1px solid var(--forest);border-radius:11px;min-height:46px;padding:11px 17px;margin-top:17px;background:var(--forest);color:white;font:650 14px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;cursor:pointer}
+.btn:hover:not(:disabled){background:var(--forest-dark)}
+.btn.secondary{background:var(--forest-pale);color:var(--forest);border-color:#BED4C2}
+.btn.secondary:hover:not(:disabled){background:#D8E8DB}
+.btn.small{min-height:36px;padding:7px 12px;font-size:13px;margin:0}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+#authSubmit{width:100%;margin-top:19px}
+.hint{color:var(--muted);font-size:13px;margin:7px 0 0;line-height:1.55}
+.error{color:#A92E36;min-height:1.2em;margin:10px 0 0}
+.msg{color:var(--forest);min-height:1.2em;margin:8px 0 0;font-size:14px}
+.ok{color:var(--forest);font-weight:700}
+.dashboard-intro{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:27px}
+.dashboard-intro h1{font-size:clamp(29px,3vw,40px);line-height:1.14;letter-spacing:-.035em;margin:0 0 7px}
+.welcome{margin:0;color:var(--muted)}.welcome strong{color:var(--forest)}
+.intro-pill{color:var(--forest);font-weight:600;font-size:13px;padding:10px 17px;background:#DFEBDD;border:1px solid #CBDDC9;border-radius:999px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.wide{grid-column:1/-1}
+.grid>.card{min-width:0}
+.pinrow{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.pinrow code{min-width:128px;font-size:26px;letter-spacing:5px;color:var(--forest)}
+.pinrow .btn{margin:0}
+details{margin-top:17px}summary{color:var(--forest);font-weight:650;font-size:14px;cursor:pointer}
+.code{font:700 clamp(30px,3vw,42px)/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:8px;color:var(--forest);margin:19px 0 11px}
+.status{display:flex;align-items:center;flex-wrap:wrap;gap:8px;color:var(--muted)}
+.spinner{width:14px;height:14px;border:2px solid var(--line);border-top-color:var(--forest);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tiers{list-style:none;padding:0;margin:22px 0 14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tier{background:#F5F8F3;border:1px solid var(--line);border-radius:16px;padding:20px;min-width:0}
+.badge{display:inline-block;padding:6px 11px;border-radius:999px;font-size:12px;font-weight:750}
+.badge.low{background:var(--low);color:var(--low-i)}
+.badge.medium{background:var(--med);color:var(--med-i)}
+.badge.high{background:var(--high);color:var(--high-i)}
+.tier p{margin:13px 0}.tier .state{font-weight:750}
+.children{list-style:none;padding:0;margin:12px 0 0}
+.children li{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:15px 0;border-top:1px solid var(--line)}
+.children li:first-child{border-top:0}
+.tag{display:inline-block;border-radius:999px;background:#E3EFE4;color:#2B6142;font-size:13px;padding:4px 9px;margin:3px 4px 3px 0}
+:focus-visible{outline:3px solid rgba(30,91,60,.35);outline-offset:3px}
+@media(max-width:760px){
+  .top{padding:15px 18px;min-height:75px}.toxica-wordmark{width:145px}.portal-name{font-size:12px;padding-left:10px}.brand{gap:10px}
+  main{margin:30px auto 50px}.grid{grid-template-columns:1fr}.wide{grid-column:auto}.tiers{grid-template-columns:1fr}
+  .narrow{margin:18px auto 0}.card{padding:23px 19px}.dashboard-intro{align-items:flex-start;flex-direction:column}.intro-pill{display:none}
+  .children li{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){.spinner{animation:none}}

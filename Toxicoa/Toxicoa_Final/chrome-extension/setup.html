@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Toxica</title>
+<link rel="stylesheet" href="ui.css">
+</head>
+<body class="popup">
+  <h1 class="toxica-heading"><img src="toxica-wordmark.png" class="toxica-wordmark" alt="Toxica"></h1>
+
+  <div id="loading" class="muted">Loading…</div>
+
+  <section id="unpaired" hidden>
+    <p class="lead">Ask your parent to open the Parent Portal and generate a pairing code.</p>
+    <div class="account" id="account"></div>
+    <label for="code">6-digit pairing code</label>
+    <input id="code" class="codebox" inputmode="numeric" autocomplete="one-time-code" maxlength="7" placeholder="000000">
+    <p id="msg" class="error" role="alert"></p>
+    <button id="connect" class="btn" disabled>Connect</button>
+  </section>
+
+  <section id="paired" hidden>
+    <p class="ok">✓ Protection is on</p>
+    <p class="muted">Your browser is protected. Safe Reddit discussions stay unchanged.</p>
+    <div class="account" id="account2"></div>
+  </section>
+
+  <p class="foot muted" id="server"></p>
+<script src="setup.js"></script>
+</body>
+</html>
