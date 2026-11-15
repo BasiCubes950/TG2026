@@ -98,9 +98,11 @@ Then load `Toxicoa/Healthy_ML_3/chrome-extension` at `chrome://extensions` (**De
 - **Prototype only:** the extension uses plain HTTP and simple file storage, and a teen can disable it. It isn't ready for real-world deployment.
 - **Limited Domain:** our dataset covers a limited set of Reddit communities, which may reduce the model’s ability to generalize to other communities and platforms.
 Domain Generalization: Domain-adaptation theory bounds target-domain error by source-domain error, distribution differences, and the minimum combined error:
+
 $$
 \epsilon_T(h) \leq \epsilon_S(h) + \frac{1}{2}d_{\mathcal{H}\Delta\mathcal{H}}(P_S^X,P_T^X) + \lambda_{\mathcal{H}}
 $$
+
 For Toxicoa, this means strong performance on sampled Reddit communities does not guarantee similar results elsewhere. We use this as a conceptual explanation, not a numerical guarantee, because the divergence and joint-error terms have not been estimated. Ben-David et al., 2010.
 ## Future work
 
